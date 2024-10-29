@@ -23,7 +23,7 @@ local VTab = Window:NewTab("Versions/Scripts");
 local VersSection = VTab:NewSection("All private Versions");
 
 VersSection:NewButton("AlphaVersion", "", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/robloxplayer123123/light/refs/heads/main/Old"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MemeScripter/Alpha/refs/heads/main/Hack"))()
 end);
 VersSection:NewButton("BetaVersion", "", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/robloxplayer123123/Beta/refs/heads/main/Poop"))()
