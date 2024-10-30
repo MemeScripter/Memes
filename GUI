@@ -1,6 +1,5 @@
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/MemeScripter/KavoUI/refs/heads/main/GUI"))();
-local Window = Library.CreateLib("Lounecy - Updated (Versions)", "GrapeTheme");
+local Window = Library.CreateLib("Lounecy", "GrapeTheme");
 local Tab = Window:NewTab("Npc Farm");
 local MainSection = Tab:NewSection("AutoFarm Menu");
 local TargetTab = Window:NewTab("Target");
@@ -52,11 +51,8 @@ end);
 VersSection:NewButton("Current Latest Version", "", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/robloxplayer123123/Codes/refs/heads/main/Share"))()
 end);
-VersSection:NewButton("Mobile KeyBoard", "", function()
-  loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
-end);
-VersSection:NewButton("CodeHUB", "", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/robloxplayer123123/Java/refs/heads/main/GUI"))()
+VersSection:NewButton("CodeHUB", "Made By My Friend", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MemeScripter/CodeHUB/refs/heads/main/GUI"))()
 end);
 MoreSection:NewButton("SolaraGui", "", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/nseinkkk/SolaraScript/main/SolaraGUI.lua"))()
@@ -4942,7 +4938,7 @@ SSection:NewToggle("auto telekinisis kill", "", function(state)
 	if state then
 		getgenv().teleaura = true;
 		while teleaura do
-			wait(0.1)
+			wait()
 			spawn(function()
 				getNearPlayer(69);
 				for i, v in pairs(plrlist) do
@@ -4951,7 +4947,7 @@ SSection:NewToggle("auto telekinisis kill", "", function(state)
 						spawn(function()
 							v.Head.Neck:Destroy();
 							plrlist = {};
-							wait(0.1);
+							wait();
 							spawn(function()
 								game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
 							end);
@@ -4973,8 +4969,8 @@ SSection:NewToggle("Telekinesis Push Aura", "", function(state)
 			wait(0.2);
 			spawn(function()
 				local LookVector = game.Workspace.Camera.CFrame.LookVector;
-				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, false);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
 			end);
 		end
 	else
@@ -4983,49 +4979,15 @@ SSection:NewToggle("Telekinesis Push Aura", "", function(state)
 		end);
 	end
 end);
-SSection:NewToggle("Super Tele Aura", "", function(state)
+SSection:NewToggle("Telekinesis Push Aura - Better", "", function(state)
 	if state then
 		getgenv().teleaura = true;
 		while teleaura do
-			wait(0.2);
+			wait();
 			spawn(function()
 				local LookVector = game.Workspace.Camera.CFrame.LookVector;
-				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-                game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, true);
-				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector * _G.TelekinisinRange, false);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
 			end);
 		end
 	else
@@ -5034,20 +4996,92 @@ SSection:NewToggle("Super Tele Aura", "", function(state)
 		end);
 	end
 end);
-SSection:NewToggle("Telekinesis Aura", "", function(state)
+
+SSection:NewToggle("Telekinesis Super Aura", "Not Recommended", function(state)
 	if state then
 		getgenv().teleaura = true;
 		while teleaura do
-			wait(0.2);
+			wait();
 			spawn(function()
 				local LookVector = game.Workspace.Camera.CFrame.LookVector;
-				game:GetService("ReplicatedStorage").Events.Telekinesisin:InvokeServer(LookVector * _G.TelekinisinRange, true);
-				game:GetService("ReplicatedStorage").Events.Telekinesisin:InvokeServer(LookVector * _G.TelekinisinRange, false);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);
+	game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);    
+	game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);     
+
+game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,true);
+				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector_G.TelekinisinRange,false);        
+    
 			end);
 		end
 	else
 		spawn(function()
-			getgenv().Telekinisesin = false;
+			getgenv().teleaura = false;
 		end);
 	end
 end);
@@ -5564,7 +5598,7 @@ SSection:NewToggle("Mini ground crack aura", "This dosent contain lag", function
 		end);
 	end
 end);
-SSection:NewToggle(" Small Ground Crack Aura", "This dosent contain lag", function(state)
+SSection:NewToggle("Small Ground Crack Aura", "This dosent contain lag", function(state)
 	if state then
 		getgenv().GroundCrack = true;
 		while GroundCrack do
