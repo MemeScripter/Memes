@@ -1,3 +1,7 @@
+if Lounect_LOADED and not _G.LY_DEBUG == true then
+    -- error("Lounecy is already running", 0)
+    return
+end
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/MemeScripter/KavoUI/refs/heads/main/GUI"))();
 local Window = Library.CreateLib("Lounecy - Updated", "GrapeTheme");
 local Tab = Window:NewTab("Npc Farm");
@@ -7101,7 +7105,7 @@ GSection:NewButton("Chat bypasser", "", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/synnyyy/synergy/additional/betterbypasser", true))()
 end);
 GSection:NewButton("AOF", "", function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Bread4556/EgosStuff/refs/heads/main/Age-Of-Femboys-AOH'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/MemeScripter/Fem/refs/heads/main/Java?token=GHSAT0AAAAAAC3LSFWW7E65LMSKHFGWRP2MZ2U53GQ'))()
 end);
 GSection:NewButton("Random script", "", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Sigma-3131/Scripts/main/SK%C4%B0DDED%20VERS%C4%B0ON%20X.lua%20(1).txt"))()
