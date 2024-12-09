@@ -1,4 +1,3 @@
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/MemeScripter/KavoUI/refs/heads/main/GUI"))();
 local Window = Library.CreateLib("Lounecy", "GrapeTheme");
 local Tab = Window:NewTab("Npc Farm");
@@ -60,6 +59,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/nseinkkk/SolaraScript
 end);
 MoreSection:NewButton("Synapse Ui", "", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/tWGxhNq0"))()
+end);
+MoreSection:NewButton("Universal Hub", "", function()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/snapshot.lua"))()
+end);
+MoreSection:NewButton("Universal Script", "", function()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/catter-y/cat-hub/main/main"))()
 end);
 _G.CToggle = false;
 _G.metalskin = false;
@@ -7144,7 +7149,7 @@ KSection:NewKeybind("Toggle UI", "", Enum.KeyCode.Nine, function()
 	Library:ToggleUI();
 end);
 GSection:NewButton("Infinite Yield", "", function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/aCmksbMy"))();
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/edgeiy/infiniteyield/master/source"))();
 end);
 GSection:NewButton("Chat Spammer", "", function()
 	loadstring(game:HttpGet(('https://raw.githubusercontent.com/ColdStep2/Chatdestroyer-Hub-V1/main/Chatdestroyer%20Hub%20V1'),true))()
