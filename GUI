@@ -4849,6 +4849,35 @@ SSection:NewButton("Kill Command (Kill <username>)", "", function()
 		end)
 	end);
 end);
+SSection:NewButton("Anti Fling V2", "", function()
+  if antifling then
+        antifling:Disconnect()
+        antifling = nil
+    end
+    antifling = RunService.Stepped:Connect(function()
+        for _, player in pairs(Players:GetPlayers()) do
+            if player ~= speaker and player.Character then
+                for _, v in pairs(player.Character:GetDescendants()) do
+                    if v:IsA("BasePart") then
+                        v.CanCollide = false
+                    end
+                end
+            end
+        end
+    end)
+end)
+SSection:NewButton("Xray", "", function()
+ xrayEnabled = true
+    xray()
+end)
+SSection:NewButton("WalkFling", "", function()
+ execCmd("unwalkfling")
+    local humanoid = speaker.Character:FindFirstChildWhichIsA("Humanoid")
+    if humanoid then
+        humanoid.Died:Connect(function()
+            execCmd("unwalkfling")
+        end)
+    end
 SSection:NewToggle("GodMode", "", function(state)
 	if state then
 		local varX = player.Character.UpperTorso.Position['X'];
@@ -5949,30 +5978,6 @@ SSection:NewToggle("Anti-Fling", "", function(state)
 		player.Character.HumanoidRootPart.Anchored = true;
 	else
 		player.Character.HumanoidRootPart.Anchored = false;
-	end
-end);
-SSection:NewToggle("Anti-Fling V2 ", "", function(state)
-	if state then
-		if antifling then
-        antifling:Disconnect()
-        antifling = nil
-    end
-    antifling = RunService.Stepped:Connect(function()
-        for _, player in pairs(Players:GetPlayers()) do
-            if player ~= speaker and player.Character then
-                for _, v in pairs(player.Character:GetDescendants()) do
-                    if v:IsA("BasePart") then
-                        v.CanCollide = false
-                    end
-                end
-            end
-        end
-    end)
-end)
-	else
-		if antifling then
-        antifling:Disconnect()
-        antifling = nil
 	end
 end);
 MSection:NewSlider("Speed", "", 3000, 16, function(s)
