@@ -66,6 +66,9 @@ end);
 MoreSection:NewButton("Universal Script", "", function()
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/catter-y/cat-hub/main/main"))()
 end);
+MoreSection:NewButton("Random Hub", "", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/SDz82NnQ"))()
+end);
 _G.CToggle = false;
 _G.metalskin = false;
 _G.LOCALPLAYER = game.Players.LocalPlayer.Name;
