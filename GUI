@@ -1,9 +1,6 @@
-if Lounect_LOADED and not _G.LY_DEBUG == true then
-    -- error("Lounecy is already running", 0)
-    return
-end
+
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/MemeScripter/KavoUI/refs/heads/main/GUI"))();
-local Window = Library.CreateLib("Lounecy - Updated", "GrapeTheme");
+local Window = Library.CreateLib("Lounecy", "GrapeTheme");
 local Tab = Window:NewTab("Npc Farm");
 local MainSection = Tab:NewSection("AutoFarm Menu");
 local TargetTab = Window:NewTab("Target");
@@ -4729,6 +4726,31 @@ runService:BindToRenderStep("esp", Enum.RenderPriority.Camera.Value, function()
 	end);
 
 end);
+SSection:NewButton("Tp UnAnchored", "", function()
+local players = getPlayer(args[1], speaker)
+    for i,v in pairs(players) do
+        local Forces = {}
+        for _,part in pairs(workspace:GetDescendants()) do
+            if Players[v].Character:FindFirstChild('Head') and part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false and not part:IsDescendantOf(speaker.Character) and part.Name == "Torso" == false and part.Name == "Head" == false and part.Name == "Right Arm" == false and part.Name == "Left Arm" == false and part.Name == "Right Leg" == false and part.Name == "Left Leg" == false and part.Name == "HumanoidRootPart" == false then
+                for i,c in pairs(part:GetChildren()) do
+                    if c:IsA("BodyPosition") or c:IsA("BodyGyro") then
+                        c:Destroy()
+                    end
+                end
+                local ForceInstance = Instance.new("BodyPosition")
+                ForceInstance.Parent = part
+                ForceInstance.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+                table.insert(Forces, ForceInstance)
+                if not table.find(frozenParts,part) then
+                    table.insert(frozenParts,part)
+                end
+            end
+        end
+        for i,c in pairs(Forces) do
+            c.Position = Players[v].Character.Head.Position
+        end
+    end
+end)
 SSection:NewButton("Kill Command (Kill <username>)", "", function()
 	local function GetPlayer(input)
 		for _, Player in pairs(game:GetService("Players"):GetPlayers()) do
@@ -5921,10 +5943,34 @@ SSection:NewToggle("Anti-Fling", "", function(state)
 		player.Character.HumanoidRootPart.Anchored = false;
 	end
 end);
-MSection:NewSlider("Speed", "", 2000, 16, function(s)
+SSection:NewToggle("Anti-Fling V2 ", "", function(state)
+	if state then
+		if antifling then
+        antifling:Disconnect()
+        antifling = nil
+    end
+    antifling = RunService.Stepped:Connect(function()
+        for _, player in pairs(Players:GetPlayers()) do
+            if player ~= speaker and player.Character then
+                for _, v in pairs(player.Character:GetDescendants()) do
+                    if v:IsA("BasePart") then
+                        v.CanCollide = false
+                    end
+                end
+            end
+        end
+    end)
+end)
+	else
+		if antifling then
+        antifling:Disconnect()
+        antifling = nil
+	end
+end);
+MSection:NewSlider("Speed", "", 3000, 16, function(s)
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s;
 end);
-MSection:NewSlider("Jump", "", 700, 50, function(s)
+MSection:NewSlider("Jump", "", 1000, 50, function(s)
 	game.Players.LocalPlayer.Character.Humanoid.JumpPower = s;
 end);
 MSection:NewButton("Inf jump", "", function()
@@ -6088,7 +6134,15 @@ MSection:NewButton("Crash Server", "", function(state)
 	wait();
 	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
 end);
-
+MSection:NewButton("NEW - Crash Server Extreme", "We Recoomend turning on ur anti crash", function(state)
+	local x = 0;
+	repeat
+		x += 1
+		game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer("true");
+	until x == 100000
+	wait();
+	game:GetService("ReplicatedStorage").Events.ToggleBlocking:FireServer(false);
+end);
 MSection:NewButton("Mini Crash Server + Mini ground crack lag", "", function(state)
 	local x = 0;
 	repeat
@@ -6135,12 +6189,12 @@ MSection:NewButton("Anti-Crash", "", function()
 	game:GetService("ReplicatedStorage").Effects.Landing:Destroy()
     game:GetService("ReplicatedStorage").Effects.Speed:Destroy()
 end)
-MSection:NewButton("Infi Energy", "", function()
+MSection:NewButton("Infi Energy - Patched By Roblox", "", function()
 	while wait(0.1) do
 		getrenv()._G.energy = 100 / 0
 	end
 end)
-MSection:NewTextBox("Fake Level", "", function(txt)
+MSection:NewTextBox("Fake Level - Works", "", function(txt)
 	while wait() do 
 game.Players[_G.nga].Character.HumanoidRootPart.titleGui.Frame.level.Text = txt
 	end
@@ -7105,7 +7159,7 @@ GSection:NewButton("Chat bypasser", "", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/synnyyy/synergy/additional/betterbypasser", true))()
 end);
 GSection:NewButton("AOF", "", function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/MemeScripter/Fem/refs/heads/main/Java?token=GHSAT0AAAAAAC3LSFWW7E65LMSKHFGWRP2MZ2U53GQ'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/MemeScripter/Java/refs/heads/main/Fem'))()
 end);
 GSection:NewButton("Random script", "", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Sigma-3131/Scripts/main/SK%C4%B0DDED%20VERS%C4%B0ON%20X.lua%20(1).txt"))()
